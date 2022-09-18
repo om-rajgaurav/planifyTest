@@ -1,6 +1,11 @@
 import React from 'react';
-import {StyleSheet, Image, View, Platform} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import {
+  StyleSheet,
+  Image,
+  View,
+  Platform,
+  TouchableOpacity,
+} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {Width, Height} from '../utils/Dimensions';
 
@@ -25,21 +30,32 @@ const CustomHeader = ({color, size, navigation}) => {
       </View>
       {/* right */}
       <View style={styles.right}>
-        <Image
-          source={require('../images/baseline-phone-24px.png')}
-          style={styles.image}
-        />
-        <Image source={require('../images/search.png')} style={styles.image} />
-        <Image
-          source={require('../images/notification.png')}
-          style={styles.image}
-        />
-        <Image
-          source={{
-            uri: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
-          }}
-          style={styles.image2}
-        />
+        <TouchableOpacity onPress={() => alert('call')}>
+          <Image
+            source={require('../images/baseline-phone-24px.png')}
+            style={styles.image}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => alert('search')}>
+          <Image
+            source={require('../images/search.png')}
+            style={styles.image}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => alert('notification')}>
+          <Image
+            source={require('../images/notification.png')}
+            style={styles.image}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => alert('profile')}>
+          <Image
+            source={{
+              uri: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
+            }}
+            style={styles.image2}
+          />
+        </TouchableOpacity>
       </View>
     </View>
   );
